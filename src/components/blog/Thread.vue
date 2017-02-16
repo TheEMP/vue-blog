@@ -1,7 +1,10 @@
 <template>
     <div class="thread-container">
         <div class="card blue darken-3 white-text">
+              <a @click="goBack" class="left backbtn btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
+
             <div class="row">
+
                 <div class="col s12">
                     <h1>Title: {{thread.title}}</h1>
                 </div>
@@ -48,6 +51,9 @@
             updateData() {
                 let blog = mockData[this.id -1]
                 this.thread = blog
+            },
+            goBack(){
+                window.history.back()
             }
         },
         props: {
@@ -61,3 +67,9 @@
     }
 
 </script>
+
+<style>
+    a.backbtn {
+        margin: 15px
+    }
+</style>

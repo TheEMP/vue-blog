@@ -1,22 +1,21 @@
 <template>
     <div class="thread-container">
-        <router-view></router-view>
+        <transition>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </transition>
         <ul class="collection">
             <threaditem v-for="(item, index) in threads" :id="index" :thread="item">
             </threaditem>
         </ul>
-        <div class="pagenation-holder">
-            <div v-for="(item,index) in totalthreads" class="pagenation">
-                {{index + 1}}
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
     import threaditem from "./Thread-item"
-    
+
     //console.log(mockdata)
     export default {
         name: "threadlist",
@@ -61,7 +60,7 @@
         },
         components: {
             threaditem,
-            
+
         }
     }
 
