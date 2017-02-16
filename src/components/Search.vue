@@ -33,7 +33,7 @@
             }
         },
         computed: {
-            filteredQuestions: function () {
+            filteredQuestions() {
                 debugger
                 var questArray = this.questions
                 var userQuery = this.searchString
