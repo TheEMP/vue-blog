@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper card blue darken-3">
                 <form>
                     <div class="input-field">
                         <input id="search" type="search" v-model="searchString" required>
@@ -9,6 +9,13 @@
                         <i class="material-icons">close</i>
                     </div>
                 </form>
+                <ul>
+                    <li v-for="question in filteredQuestions">
+                        <router-link :to="'/questions/'+question._id">
+                            {{question.title}}
+                        </router-link>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -21,13 +28,13 @@
         name: 'search',
         data() {
             return {
-                questions: [],
+                questions: [{ id: 554554, title: 'Hello', body: 'Test' }],
                 searchString: ''
             }
         },
         computed: {
             filteredQuestions: function () {
-
+                debugger
                 var questArray = this.questions
                 var userQuery = this.searchString
                 if (userQuery.length > 0) {

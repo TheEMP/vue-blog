@@ -69,7 +69,7 @@
                 text: "",
                 title: "",
                 tags: [],
-                icon: "folder"
+                icon: "textsms"
             }
         },
         components: {
