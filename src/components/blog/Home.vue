@@ -1,5 +1,6 @@
 <template>
     <div class="thread-container">
+         <router-link v-if="$route.path != '/new'" :to='{name: "new"}' class="waves-effect waves-light btn-large green"><i class="material-icons">&#xE8CD;</i>New Blog</router-link>
         <threadlist :threads="threads">
         </threadlist>
     </div>
@@ -19,6 +20,7 @@
             }
         },
         mounted() {
+            console.log("route path", this.$route.path)
             // Load List of threads
             // axios.get("api/threads").then(res => {
             //     console.log("thread", res.data)

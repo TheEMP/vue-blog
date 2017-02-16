@@ -1,5 +1,5 @@
 <template>
-    <div class="card blue-grey darken-1">
+    <div class="card blue darken-3">
         <div class="card-content white-text">
             <form @submit.prevent="post">
                 <div class="row">
