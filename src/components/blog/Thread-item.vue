@@ -1,5 +1,5 @@
 <template>
-    <router-link :to='{name: "thread-show", params:{id: thread.id}}'>
+    <router-link :to='{name: "thread-show", params:{id: id}}'>
         <li :class="{gray:id %2 === 0}" class="collection-item avatar">
 
             <div class="left">

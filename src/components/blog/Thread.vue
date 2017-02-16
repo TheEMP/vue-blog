@@ -19,7 +19,7 @@
             <vue-markdown :source="thread.text"></vue-markdown>
             <div class="row">
                 <div class="col s12">
-                    <!--<edit :comment="thread" :text="thread.text"></edit>-->
+                    <edit :comment="thread" :text="thread.text" :id="id"></edit>
                     <reply :comment="thread"></reply>
                 </div>
             </div>
@@ -32,8 +32,8 @@
 <script>
     import VueMarkdown from "vue-markdown"
     import comments from "../comment/Comment-list"
-    import mockData from "./MOCK_DATA.json"
-    //import edit from "../shared/Edit"
+    import mockData from "../../server-assets/blog-service.js"
+    import edit from "../shared/Edit"
     import reply from "../shared/Reply"
     export default {
         name: "thread",
@@ -45,11 +45,11 @@
             VueMarkdown,
             "comment-list": comments,
              reply,
-            // edit
+             edit
         },
         methods: {
             updateData() {
-                let blog = mockData[this.id -1]
+                let blog = mockData.getBlog(this.id)
                 this.thread = blog
             },
             goBack(){
