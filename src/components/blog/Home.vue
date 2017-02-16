@@ -9,13 +9,13 @@
 <script>
     //import axios from 'axios'
     import threadlist from "./ThreadList"
-    import mockData from "./MOCK_DATA.json"
+    import mockData from "../../server-assets/blog-service.js"
     console.log(mockData)
     export default {
         name: "allthreads",
         data() {
             return {
-                threads: mockData,
+                threads: mockData.getBlogs(),
                 curPage: 0
             }
         },
