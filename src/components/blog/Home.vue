@@ -1,6 +1,6 @@
 <template>
     <div class="thread-container">
-         <router-link v-if="$route.path != '/new'" :to='{name: "new"}' class="waves-effect waves-light btn-large green"><i class="material-icons">&#xE8CD;</i>New Blog</router-link>
+         <!--<router-link v-if="$route.path != '/new'" :to='{name: "new"}' class="waves-effect waves-light btn-large green"><i class="material-icons">&#xE8CD;</i>New Blog</router-link>-->
         <threadlist :threads="threads">
         </threadlist>
     </div>
