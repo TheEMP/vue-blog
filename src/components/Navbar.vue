@@ -17,16 +17,11 @@
             </div>
             <div class="nav-content">
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#test1">Home</a></li>
-                    <li class="tab"><a class="active" href="#test2">Post List</a></li>
-                    <li class="tab"><a href="#test4">New Post</a></li>
+                    <li class="tab"><router-link :to="{name: 'home'}"> Home </router-link></li>
+                    <li class="tab"><router-link :to="{name: 'new'}"> New Post </router-link></li>
                 </ul>
             </div>
         </nav>
-        <!--<div id="test1" class="col s12">Test 1</div>
-        <div id="test2" class="col s12">Test 2</div>
-        <div id="test3" class="col s12">Test 3</div>
-        <div id="test4" class="col s12">Test 4</div>-->
         <Search></Search>
     </div>
 </template>
